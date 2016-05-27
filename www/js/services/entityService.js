@@ -28,6 +28,7 @@ angular.module('starter.services.estreias', [])
 		Service.prototype.load = function(){
 			var that = this;
 			var url = BASE_URL +  that.path  + '?page=' + that.page + '&api_key=' + API_KEY;
+			console.log('url', url);
 			console.log('chegou no service');
 			that.isLoading = true;
 			var d = $q.defer();
