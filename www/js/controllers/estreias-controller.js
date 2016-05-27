@@ -40,7 +40,7 @@
 
 	}
 
-	var app = angular.module('starter.controllers.estreias', []);
+	var app = angular.module('starter.controllers');
 	app.controller('EstreiasCtrl', EstreiasCtrl);
 
 
