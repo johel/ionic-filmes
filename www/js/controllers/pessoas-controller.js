@@ -44,11 +44,25 @@
 	}
 
 
-	function PersonCtrl($scope, $stateParams){
+	function PersonCtrl($scope, $stateParams,$ionicLoading, PersonService){
 		console.log('Person Ctrl params', $stateParams);
-		$scope.person = $stateParams.person;
-		$scope.labels = ["Bom", "Regular", "Ruim"];
-		$scope.data = [1,2,3];
+		// $scope.person = $stateParams.person;
+		// $scope.labels = ["Bom", "Regular", "Ruim"];
+		// $scope.data= [1,2,3];
+
+		function loadData(){
+			$ionicLoading.show();
+			var person = $scope.person = $stateParams.person;
+			$scope.labels = ["Bom", "Regular", "Ruim"];
+			PersonService.getHerMoviesQualityDistribution(person.id).then(function(data){
+				$scope.data = data;
+			}).finally(function(){
+				$ionicLoading.hide();
+			});
+		}
+
+		loadData();
+
 	}
 
 
