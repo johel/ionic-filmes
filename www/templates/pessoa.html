@@ -1,7 +1,34 @@
-<ion-view view-title="Filme">
-  <ion-content>
+<ion-view title="Astro">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content class="has-header">
+
+    <div class="list card">
+
+  <div class="item item-avatar">
+    <img ng-src="http://image.tmdb.org/t/p/w300/{{person.profile_path}}">
+    <h2>{{person.name}}</h2>
+  </div>
+
+  <div class="item item-body">
+    <h3 style="text-align: center;">Qualidade dos filems</h4>
+    <canvas id="doughnut" class="chart chart-doughnut"
+      chart-data="data" chart-labels="labels">
+    </canvas> 
+
+  </div>
+
+  <div class="button-bar">
+    <a class="button button-positive">Bom</a>
+    <a class="button">Regular</a>
+    <a class="button button-assertive">Ruim</a>
+  </div>
+
+</div>
+
     
-		<pre>{{person}}</pre>
+
 
   </ion-content>
 </ion-view>

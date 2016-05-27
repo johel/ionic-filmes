@@ -47,6 +47,8 @@
 	function PersonCtrl($scope, $stateParams){
 		console.log('Person Ctrl params', $stateParams);
 		$scope.person = $stateParams.person;
+		$scope.labels = ["Bom", "Regular", "Ruim"];
+		$scope.data = [1,2,3];
 	}
 
 
