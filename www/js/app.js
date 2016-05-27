@@ -53,10 +53,11 @@ angular.module('starter', ['ionic', 'starter.services.estreias', 'starter.contro
 
   .state('app.estreia', {
     url: '/estreia',
+    params: {movie:null},
     views: {
       'menuContent': {
         templateUrl: 'templates/estreia.html',
-        controller: 'EstreiaCtrl'
+        controller: 'MovieCtrl'
       }
     }
   })

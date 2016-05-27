@@ -3,7 +3,7 @@
 	var ESTREIAS_PATH = 'movie/upcoming';
 	var PATH2 = 'genre/' + '18'+ '/movies'
 
-	function EstreiasCtrl($scope,$ionicLoading,$ionicPopup, EntityService){
+	function EstreiasCtrl($scope,$ionicLoading,$ionicPopup,$state, EntityService){
 		console.log('cheguei no estreia controller');
 		var entityService = EntityService.InstanceByPath(ESTREIAS_PATH);
 		$scope.estreias = entityService;
@@ -38,10 +38,24 @@
 			}
 		};
 
+		$scope.showMovie = function(movie){
+			$state.go('app.estreia', {
+				movie: movie
+			});
+		}
+
 	}
+
+
+	function MovieCtrl($scope, $stateParams){
+		console.log('Movie Ctrl params', $stateParams);
+		$scope.movie = $stateParams.movie;
+	}
+
 
 	var app = angular.module('starter.controllers');
 	app.controller('EstreiasCtrl', EstreiasCtrl);
+	app.controller('MovieCtrl', MovieCtrl);
 
 
 })(angular)

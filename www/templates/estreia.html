@@ -1,5 +1,41 @@
 <ion-view view-title="Filme">
   <ion-content>
-    <h1>Filme</h1>
+    
+    <div class="list card mycard">
+		  <div class="item item-avatar">
+		    <h2>{{movie.original_title}}</h2>
+		    <p>{{movie.release_date}}</p>
+		  </div>
+
+		  <div class="item item-body">
+		  	<div class="row">
+					<div class=" col col-50">
+			  		<img class="full-image" alt="{{movie.original_title}}" ng-src="http://image.tmdb.org/t/p/w300/{{movie.poster_path}}">
+			  	</div>
+			  	<div class=" col col-50">
+			  		<ul>
+				  		<li><button>Facebook</button></li>
+				  		<li><button>Facebook</button></li>
+				  		<li><button>Facebook</button></li>
+			  		</ul>
+
+			  	</div>
+		  	</div>
+
+				<div style='clear: both'></div>
+		  	<div class="overview">
+			  	<p>
+			     	{{movie.overview}}
+			    </p>
+			    <p>
+			      <a href="#" class="subdued">1 Like</a>
+			      <a href="#" class="subdued">5 Comments</a>
+			    </p>
+		  	</div>
+
+		  </div>
+
+		</div>
+
   </ion-content>
 </ion-view>
