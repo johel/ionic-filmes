@@ -1,0 +1,45 @@
+<ion-view title="Estreias">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content >
+
+    <ion-refresher
+        pulling-text="Arraste para atualizar..."
+        on-refresh="refreshItems()" >
+    </ion-refresher >
+
+    
+    <ion-list >
+      <ion-item ng-repeat="estreia in estreias.results | filter:search" 
+                class="item-thumbnail-left" ng-click="showMovie(estreia)">
+        <img ng-src="http://image.tmdb.org/t/p/w300/{{estreia.poster_path}}">
+        <h2>{{::estreia.original_title}}</h2 >
+        
+         <p>
+          <span >Data de Estreia:
+            <i class="ion ion-ios-navigate" ></i>
+            {{::estreia.release_date}}</span>
+        </p>
+         <p>
+            <span>
+              Nota:<i class="ion ion-star" ></i>#{{::estreia.vote_average}}
+            </span>
+         </p>
+
+      </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll
+        ng-if="moreDataCanBeLoaded()"
+        on-infinite="nextPage()"
+        distance="1%"
+        immediate-check="false" >
+    </ion-infinite-scroll >
+
+    <div class="padding text-center"
+         ng-if="!estreias.hasMore" >
+      <p >Sem mais resultados</p >
+    </div >
+  </ion-content >
+</ion-view>
