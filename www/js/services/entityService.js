@@ -1,4 +1,4 @@
-angular.module('starter.services.estreias', [])
+angular.module('starter.services', [])
 	.constant('BASE_URL', 'https://api.themoviedb.org/3/')
 	.constant('API_KEY', '2971983c49109e8b49b70091a46e6219')
 	.factory('EntityService', function MessageFactory($q, $http, BASE_URL, API_KEY){
@@ -61,6 +61,7 @@ angular.module('starter.services.estreias', [])
 		}
 
 		Service.prototype.next = function(){
+			console.log('next');
 			this.page += 1;
 			return this.load();
 		}

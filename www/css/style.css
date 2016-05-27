@@ -1,4 +1,10 @@
 /* Empty. Add your own CSS if you like */
+
+
+/*******************************************************
+	              Detalhes do filme
+*********************************************************/
+
 .poster-image{
 	width:80%;
 }
@@ -9,7 +15,7 @@
 	overflow: auto;
 	text-align: center;
 	padding:10px;
-	background-color: #ccc;
+	background-color: #eaeaea;
 	border-radius: 5px;
 }
 

@@ -1,0 +1,39 @@
+<ion-view title="Astros">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content >
+
+    <ion-refresher
+        pulling-text="Arraste para atualizar..."
+        on-refresh="refreshItems()" >
+    </ion-refresher >
+
+    
+    <ion-list >
+      <ion-item ng-repeat="pessoa in pessoas.results | filter:search" 
+                class="item-thumbnail-left" ng-click="showPerson(pessoa)">
+        <img ng-src="http://image.tmdb.org/t/p/w300/{{pessoa.profile_path}}">
+        <h2>{{::pessoa.name}}</h2 >
+         <p>
+            <span>
+              Popularidade:<i class="ion ion-star" ></i>#{{::pessoa.popularity}}
+            </span>
+         </p>
+
+      </ion-item>
+    </ion-list>
+
+    <ion-infinite-scroll
+        ng-if="moreDataCanBeLoaded()"
+        on-infinite="nextPage()"
+        distance="1%"
+        immediate-check="false" >
+    </ion-infinite-scroll >
+
+    <div class="padding text-center"
+         ng-if="!pessoas.hasMore" >
+      <p >Sem mais resultados</p >
+    </div >
+  </ion-content >
+</ion-view>
