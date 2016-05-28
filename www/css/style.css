@@ -24,22 +24,27 @@
 }
 
 .social-links{
-    list-style: none;
-    float:right;
+	padding:10px;
+	border-radius: 4px;
+  background-color: #eaeaea;
+  list-style: none;
+  display:flex;
+  width:100%;
 }
 
 .social-links li{
-    display: inline-block;
-    margin-right:20px;
+    display:flex;
+    flex:1 1 20px;
+    justify-content:center;
     
 }
 
-
+.ion-android-share-alt,
 .ion-social-facebook,
 .ion-social-twitter,
 .ion-social-googleplus,
 .ion-social-instagram{
-		font-size:25px;
+		font-size:30px;
     -webkit-transition:color 0.3s;
     transition: color 0.3s;
 }

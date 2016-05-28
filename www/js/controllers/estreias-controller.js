@@ -47,9 +47,34 @@
 	}
 
 
-	function MovieCtrl($scope, $stateParams){
+	function MovieCtrl($scope, $stateParams, $cordovaSocialSharing){
 		console.log('Movie Ctrl params', $stateParams);
 		$scope.movie = $stateParams.movie;
+
+		$scope.shareAnywhere = function() {
+				var image = 'http://image.tmdb.org/t/p/w300/' + $scope.movie.poster_path;
+        $cordovaSocialSharing.share("Minha mensagem", "Assunto do Email", image, "http://www.programadorobjetivo.co");
+    }
+
+		$scope.shareViaType = function(type, message, image, link) {
+				console.log('image', image);
+        $cordovaSocialSharing.canShareVia(type, message, image, link).then(function(result) {
+        		switch(type){
+        			case 'twitter':
+        				$cordovaSocialSharing.shareViaTwitter(message, image, link);
+        				break;
+        			case 'facebook':
+        				$cordovaSocialSharing.shareViaFacebook(message, image, link);
+        				break;
+        			default:
+        				$cordovaSocialSharing.share("Minha mensagem", "Assunto do Email", image, "http://www.programadorobjetivo.co");
+        				break;
+        		}
+        }, function(error) {
+            alert("Nao é possivel compartilhar no " + type);
+        });
+    }
+
 	}
 
 

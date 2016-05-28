@@ -12,6 +12,7 @@
 					<div class="poster">
 			  		<img class="poster-image" alt="{{movie.original_title}}" ng-src="http://image.tmdb.org/t/p/w300/{{movie.poster_path}}">
 			  		<button class="button button-dark add-btn"><i class="ion-android-add"></i> Lista</button>
+			  		
 			  	</div>
 		  	</div>
 
@@ -21,18 +22,14 @@
 			     	{{movie.overview}}
 			    </p>
 			    <p>
+			    Compartilhe (Meu celular apenas comportava o compartilhamento geral, logo os outros não foram testados):
 			    <div class="row">
-			    	<div class="col col-33">
-			    		<a href="#" class="subdued">Compartilhe</a>
-			    	</div>
-			    	<div class="col col-67">
 				    	<ul class="social-links">
-	               <li><a href="#"><i class="ion-social-facebook"></i></a></li>
-	               <li><a href="#"><i class="ion-social-twitter"></i></a></li>
-	               <li><a href="#"><i class="ion-social-googleplus"></i></a></li>
-	               <li><a href="#"><i class="ion-social-instagram"></i></a></li>
+				    		<li><a ng-click="shareAnywhere()" href=""><i class="ion-android-share-alt"></i></a></li>
+	              <li><a ng-click="shareViaType('facebook', 'Muito legal','http://image.tmdb.org/t/p/w300/{{movie.poster_path}}', 'www.google.com')" href=""><i class="ion-social-facebook"></i></a></li>
+	              <li><a ng-click="shareViaType('twitter', 'Muito legal','http://image.tmdb.org/t/p/w300/{{movie.poster_path}}', 'www.google.com')" href=""><i class="ion-social-twitter"></i></a></li>
+	              <li><a ng-click="shareViaType('googleplus', 'Muito legal','http://image.tmdb.org/t/p/w300/{{movie.poster_path}}', 'www.google.com')" href=""><i class="ion-social-googleplus"></i></a></li>
 	           	</ul>
-			    	</div>
 			    </div>
 			
 
