@@ -42,7 +42,8 @@ angular.module('starter',[
     url: '/favoritos',
     views: {
       'menuContent': {
-        templateUrl: 'templates/favoritos.html'
+        templateUrl: 'templates/favoritos.html',
+        controller: 'FavoritesCtrl'
       }
     }
   })

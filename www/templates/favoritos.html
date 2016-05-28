@@ -1,5 +1,29 @@
-<ion-view view-title="Favoritos">
-  <ion-content>
-    <h1>Favoritos</h1>
-  </ion-content>
+<ion-view title="Favoritos">
+  <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+  </ion-nav-buttons>
+  <ion-content >
+
+  	<h2 ng-hide="favorites.count() > 0">Lista de Favoritos Vazia</h2>
+    <ion-list ng-show="favorites.count() > 0">
+      <ion-item ng-repeat="favorite in favorites.getFavorites()" 
+                class="item-thumbnail-left" ng-click="showMovie(favorite)">
+        <img ng-src="http://image.tmdb.org/t/p/w300/{{favorite.poster_path}}">
+        <h2>{{::favorite.original_title}}</h2 >
+        
+         <p>
+          <span >Data de Estreia:
+            <i class="ion ion-ios-navigate" ></i>
+            {{::favorite.release_date}}</span>
+        </p>
+         <p>
+            <span>
+              Nota:<i class="ion ion-star" ></i>#{{::favorite.vote_average}}
+            </span>
+         </p>
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content >
 </ion-view>
