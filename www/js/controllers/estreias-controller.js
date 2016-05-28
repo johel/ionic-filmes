@@ -3,7 +3,7 @@
 	var ESTREIAS_PATH = 'movie/upcoming';
 	var PATH2 = 'genre/' + '18'+ '/movies'
 
-	function EstreiasCtrl($scope,$ionicLoading,$ionicPopup,$state, EntityService){
+	function EstreiasCtrl($scope,$ionicLoading,$ionicPopup,$state,FavoriteService, EntityService){
 		console.log('cheguei no estreia controller');
 		var entityService = EntityService.InstanceByPath(ESTREIAS_PATH);
 		$scope.estreias = entityService;
@@ -38,11 +38,23 @@
 			}
 		};
 
+		$scope.addToFavorites = function(movie){
+    	FavoriteService.addFavorite(movie);
+    }
+
+    $scope.removeFromFavorites = function(movie){
+    	FavoriteService.removeFavorite(movie);
+    }
+
 		$scope.showMovie = function(movie){
 			$state.go('app.estreia', {
 				movie: movie
 			});
 		}
+
+		$scope.isFavorite = function(movie){
+    	return FavoriteService.isFavorite(movie);
+    }
 
 	}
 

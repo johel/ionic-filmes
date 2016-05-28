@@ -11,6 +11,12 @@ app.factory('FavoriteService', ['$window', function($window) {
       
     },
     isFavorite: function(movie){
+      // if(movie.id === 291805){
+      //      console.log('movie', movie);
+      //      console.log(favoritos);
+      //      console.log(movie.id in favoritos);
+      // }
+     
       return (movie.id in favoritos);
     },
     getFavorite: function(movie) {

@@ -12,7 +12,8 @@
     
     <ion-list >
       <ion-item ng-repeat="estreia in estreias.results | filter:search" 
-                class="item-thumbnail-left" ng-click="showMovie(estreia)">
+            ng-class=" isFavorite(estreia)? 'item-thumbnail-left favorite': 'item-thumbnail-left normal'"
+              ng-click="showMovie(estreia)">
         <img ng-src="http://image.tmdb.org/t/p/w300/{{estreia.poster_path}}">
         <h2>{{::estreia.original_title}}</h2 >
         
@@ -26,6 +27,15 @@
               Nota:<i class="ion ion-star" ></i>#{{::estreia.vote_average}}
             </span>
          </p>
+
+        <ion-option-button style="bg-color:red" ng-if="isFavorite(estreia)" class="ion-minus-circled"
+            ng-click="removeFromFavorites(estreia); $event.stopPropagation();">
+          &nbsp Favoritos
+        </ion-option-button>
+        <ion-option-button ng-if="!isFavorite(estreia)" class="ion-plus-circled"
+            ng-click="addToFavorites(estreia); $event.stopPropagation();">
+          &nbsp Favoritos
+        </ion-option-button>
 
       </ion-item>
     </ion-list>

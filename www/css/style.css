@@ -61,3 +61,19 @@
 .ion-social-instagram{
     color:#517fa4;
 }
+
+
+/*******************************************************
+	              Listagem de filmes
+*********************************************************/
+
+
+.favorite{
+	transition: border-left-color 0.5s linear;
+	border-left: 5px solid #029E2F;
+}
+
+.normal{
+	transition: border-left-color 0.5s linear;
+	border-left: 5px solid #A78FF5;
+}
