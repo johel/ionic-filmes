@@ -19,7 +19,7 @@ app.factory('FavoriteService', ['$window', function($window) {
     getFavorites: function() {
       return favoritos;
     },
-    getListOfFavorites: function(){
+    get results() {
       var keys = Object.keys(favoritos);
       return keys.map(function(key){
         return favoritos[key];

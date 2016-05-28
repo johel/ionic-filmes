@@ -48,6 +48,17 @@ angular.module('starter',[
     }
   })
 
+  .state('app.favorito', {
+    url: '/favorito',
+    params: {movie:null},
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/favorito.html',
+        controller: 'FavoriteCtrl'
+      }
+    }
+  })
+
   .state('app.estreias', {
     url: '/estreias',
     views: {

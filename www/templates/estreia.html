@@ -11,7 +11,7 @@
 		  	<div class="row">
 					<div class="poster">
 			  		<img class="poster-image" alt="{{movie.original_title}}" ng-src="http://image.tmdb.org/t/p/w300/{{movie.poster_path}}">
-			  		<button ng-click= "addToFavorite(movie)" class="button button-dark add-btn"><i class="ion-android-add"></i> Lista</button>
+			  		<button ng-disabled="isFavorite(movie)" ng-click= "addToFavorite(movie)" class="button button-dark add-btn"><i class="ion-android-add"></i> Lista</button>
 			  	</div>
 		  	</div>
 

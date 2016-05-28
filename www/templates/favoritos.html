@@ -3,10 +3,16 @@
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-content >
+		
 
-  	<h2 ng-hide="favorites.count() > 0">Lista de Favoritos Vazia</h2>
+		<div ng-hide="favorites.count() > 0" class="card">
+		  <div class="item item-text-wrap">
+		    Atualmente sua lista de favoritos encontra-se vazia. <a ng-click="clickHere()" href="">Clique aqui</a> para encontrar alguns filmes de interesse.
+		  </div>
+		</div>
+
     <ion-list ng-show="favorites.count() > 0">
-      <ion-item ng-repeat="favorite in favorites.getFavorites()" 
+      <ion-item ng-repeat="favorite in favorites.results" 
                 class="item-thumbnail-left" ng-click="showMovie(favorite)">
         <img ng-src="http://image.tmdb.org/t/p/w300/{{favorite.poster_path}}">
         <h2>{{::favorite.original_title}}</h2 >

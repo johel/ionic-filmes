@@ -1,0 +1,30 @@
+<ion-view view-title="Filme">
+  <ion-content>
+    
+    <div class="list card mycard">
+		  <div class="item item-avatar">
+		    <h2>{{movie.original_title}}</h2>
+		    <p>{{movie.release_date}}</p>
+		  </div>
+
+		  <div class="item item-body">
+		  	<div class="row">
+					<div class="poster">
+			  		<img class="poster-image" alt="{{movie.original_title}}" ng-src="http://image.tmdb.org/t/p/w300/{{movie.poster_path}}">
+			  		<button ng-click="removeFromFavorites(movie)" class="button button-dark add-btn"><i class="ion-minus"></i> Lista</button>
+			  	</div>
+		  	</div>
+
+				<div style='clear: both'></div>
+		  	<div class="overview">
+			  	<p>
+			     	{{movie.overview}}
+			    </p>
+		  	</div>
+
+		  </div>
+
+		</div>
+
+  </ion-content>
+</ion-view>

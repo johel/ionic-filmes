@@ -81,6 +81,10 @@
     	console.log('favorites', FavoriteService.getFavorites());
     }
 
+     $scope.isFavorite = function(movie){
+    	return FavoriteService.isFavorite(movie);
+    }
+
 	}
 
 
