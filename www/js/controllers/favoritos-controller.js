@@ -1,6 +1,6 @@
 function FavoritesCtrl($scope, $state,$location,$ionicHistory, FavoriteService){
 	$scope.favorites = FavoriteService;
-
+	$scope.search = {};
 	$scope.showMovie = function(movie){
 		$state.go('app.favorito', {
 			movie: movie
@@ -16,6 +16,12 @@ function FavoritesCtrl($scope, $state,$location,$ionicHistory, FavoriteService){
 		});
 
 		$location.path('/app/estreias');
+	}
+
+	$scope.search = function(){
+		$state.go('app.search', {
+			searchTerm: $scope.search.searchTerm
+		});
 	}
 
 }

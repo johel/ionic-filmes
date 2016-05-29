@@ -100,6 +100,17 @@ angular.module('starter',[
         controller: 'PersonCtrl'
       }
     }
+  })
+
+  .state('app.search', {
+    url: '/search',
+    params: {searchTerm:null},
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/search.html',
+        controller: 'SearchCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/favoritos');
