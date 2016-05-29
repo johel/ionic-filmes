@@ -11,29 +11,29 @@
 
     
     <ion-list >
-      <ion-item ng-repeat="estreia in estreias.results | filter:search" 
-            ng-class=" isFavorite(estreia)? 'item-thumbnail-left favorite': 'item-thumbnail-left normal'"
-              ng-click="showMovie(estreia)">
-        <img ng-src="http://image.tmdb.org/t/p/w300/{{estreia.poster_path}}">
-        <h2>{{::estreia.original_title}}</h2 >
+      <ion-item ng-repeat="movie in movies.results | filter:search" 
+            ng-class=" isFavorite(movie)? 'item-thumbnail-left favorite': 'item-thumbnail-left normal'"
+              ng-click="showMovie(movie)">
+        <img ng-src="http://image.tmdb.org/t/p/w300/{{movie.poster_path}}">
+        <h2>{{::movie.original_title}}</h2 >
         
          <p>
           <span >Data de Estreia:
             <i class="ion ion-ios-navigate" ></i>
-            {{::estreia.release_date}}</span>
+            {{::movie.release_date}}</span>
         </p>
          <p>
             <span>
-              Nota:<i class="ion ion-star" ></i>#{{::estreia.vote_average}}
+              Nota:<i class="ion ion-star" ></i>#{{::movie.vote_average}}
             </span>
          </p>
 
-        <ion-option-button style="bg-color:red" ng-if="isFavorite(estreia)" class="ion-minus-circled"
-            ng-click="removeFromFavorites(estreia); $event.stopPropagation();">
+        <ion-option-button style="bg-color:red" ng-if="isFavorite(movie)" class="ion-minus-circled"
+            ng-click="removeFromFavorites(movie); $event.stopPropagation();">
           &nbsp Favoritos
         </ion-option-button>
-        <ion-option-button ng-if="!isFavorite(estreia)" class="ion-plus-circled"
-            ng-click="addToFavorites(estreia); $event.stopPropagation();">
+        <ion-option-button ng-if="!isFavorite(movie)" class="ion-plus-circled"
+            ng-click="addToFavorites(movie); $event.stopPropagation();">
           &nbsp Favoritos
         </ion-option-button>
 
@@ -48,7 +48,7 @@
     </ion-infinite-scroll >
 
     <div class="padding text-center"
-         ng-if="!estreias.hasMore" >
+         ng-if="!movies.hasMore" >
       <p >Sem mais resultados</p >
     </div >
   </ion-content >

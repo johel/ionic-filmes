@@ -28,15 +28,11 @@ angular.module('starter.services', [])
 		Service.prototype.load = function(){
 			var that = this;
 			var url = BASE_URL +  that.path  + '?page=' + that.page + '&api_key=' + API_KEY;
-			console.log('url', url);
-			console.log('chegou no service');
 			that.isLoading = true;
 			var d = $q.defer();
 			var request = $http.get(url);
 
 			request.then(function(response){
-				console.log('resultado da solicitacao');
-				console.log(response.data);
 				var results = response.data.results;
 
 				angular.forEach(results,function(item, key){
@@ -61,7 +57,6 @@ angular.module('starter.services', [])
 		}
 
 		Service.prototype.next = function(){
-			console.log('next');
 			this.page += 1;
 			return this.load();
 		}

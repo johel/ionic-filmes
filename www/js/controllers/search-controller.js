@@ -1,10 +1,9 @@
 var MOVIE_SEARCH_PATH = "search/movie";
 
 function SearchCtrl($scope,$ionicLoading,$ionicPopup,$state,FavoriteService,$stateParams, SearchService){
-	console.log('cheguei no search controller');
-	console.log('search term ', $stateParams.searchTerm);
+
 	SearchService.initializeSearch(MOVIE_SEARCH_PATH, $stateParams.searchTerm);
-	$scope.estreias = SearchService;
+	$scope.movies = SearchService;
 	$ionicLoading.show();
 	SearchService.load().then(function () {
 		

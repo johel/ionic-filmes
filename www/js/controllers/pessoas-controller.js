@@ -45,10 +45,6 @@
 
 
 	function PersonCtrl($scope, $stateParams,$ionicLoading, PersonService){
-		console.log('Person Ctrl params', $stateParams);
-		// $scope.person = $stateParams.person;
-		// $scope.labels = ["Bom", "Regular", "Ruim"];
-		// $scope.data= [1,2,3];
 
 		function loadData(){
 			$ionicLoading.show();

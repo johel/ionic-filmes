@@ -7,9 +7,7 @@ function FavoritesCtrl($scope, $state,$location,$ionicHistory, FavoriteService){
 		});
 	}
 
-	$scope.clickHere = function(){
-		console.log('clicked here');
-		
+	$scope.clickHere = function(){		
 		$ionicHistory.nextViewOptions({
 		  disableAnimate: true,
 		  disableBack: true

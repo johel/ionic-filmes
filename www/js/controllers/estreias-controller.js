@@ -6,7 +6,7 @@
 	function EstreiasCtrl($scope,$ionicLoading,$ionicPopup,$state,FavoriteService, EntityService){
 		console.log('cheguei no estreia controller');
 		var entityService = EntityService.InstanceByPath(ESTREIAS_PATH);
-		$scope.estreias = entityService;
+		$scope.movies = entityService;
 		$ionicLoading.show();
 		entityService.load().then(function () {
 			
@@ -60,7 +60,6 @@
 
 
 	function MovieCtrl($scope, $stateParams, $cordovaSocialSharing, FavoriteService){
-		console.log('Movie Ctrl params', $stateParams);
 		$scope.movie = $stateParams.movie;
 
 		$scope.shareAnywhere = function() {
@@ -69,7 +68,6 @@
     }
 
 		$scope.shareViaType = function(type, message, image, link) {
-			console.log('image', image);
       $cordovaSocialSharing.canShareVia(type, message, image, link).then(function(result) {
       		switch(type){
       			case 'twitter':
@@ -89,8 +87,6 @@
 
     $scope.addToFavorite = function(movie){
     	FavoriteService.addFavorite(movie);
-    	console.log('filme adicionado aos favoritos', movie);
-    	console.log('favorites', FavoriteService.getFavorites());
     }
 
      $scope.isFavorite = function(movie){

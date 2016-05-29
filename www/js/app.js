@@ -63,7 +63,7 @@ angular.module('starter',[
     url: '/estreias',
     views: {
       'menuContent': {
-        templateUrl: 'templates/estreias.html',
+        templateUrl: 'templates/filmes.html',
         controller: 'EstreiasCtrl'
       }
     }
@@ -74,7 +74,7 @@ angular.module('starter',[
     params: {movie:null},
     views: {
       'menuContent': {
-        templateUrl: 'templates/estreia.html',
+        templateUrl: 'templates/filme.html',
         controller: 'MovieCtrl'
       }
     }
