@@ -69,6 +69,13 @@ Essa seção possui as mesmas funcionalidades da seção de estréias e foi inco
 
 ###Fotos
 
+![foto1](./www/img/readmeImages/1.jpg)
+![foto2](./www/img/readmeImages/2.jpg)
+![foto3](./www/img/readmeImages/3.jpg)
+![foto4](./www/img/readmeImages/4.jpg)
+![foto5](./www/img/readmeImages/5..jpg)
+![foto6](./www/img/readmeImages/6.jpg)
+
 
 
 
