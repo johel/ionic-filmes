@@ -17,8 +17,10 @@ function FavoritesCtrl($scope, $state,$location,$ionicHistory, FavoriteService){
 	}
 
 	$scope.search = function(){
+		var searchTerm = $scope.search.searchTerm;
+		$scope.search.searchTerm = "";
 		$state.go('app.search', {
-			searchTerm: $scope.search.searchTerm
+			searchTerm: searchTerm
 		});
 	}
 
